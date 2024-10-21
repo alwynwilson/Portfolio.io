@@ -10,12 +10,12 @@
   scroll-behavior: smooth;
 }
 
-/* Hides the scrollbar but allows scrolling */
 html {
-  overflow: -moz-scrollbars-none; /* For Firefox */
-  -ms-overflow-style: none;  /* For IE and Edge */
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
-  display: none;  /* For Chrome, Safari, and Opera */
+  display: none;
 }
