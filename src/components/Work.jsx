@@ -14,7 +14,7 @@ const Work = () => {
                         <p className='py-4 lg:text-xl'></p>
                         <p className='py-4 lg:text-xl'>{experience.year}</p>
                     </div>
-                    <p className='font-sans text-grey-400 lg:text-xl'>{experience.description}</p>
+                    <p className='font-sans lg:text-xl text-justify sm:text-center'>{experience.description}</p>
                 </div>
             ))}
         </div>

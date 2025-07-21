@@ -1,40 +1,85 @@
-import React from 'react'
-import { LuImport } from 'react-icons/lu'
-import alwyn from '../assets/coding.jpg'
-import {INTRO} from '../constants/index'
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { LuImport } from "react-icons/lu";
+import alwyn from "../assets/coding.jpg";
+import { INTRO } from "../constants/index";
 
 const Hero = () => {
-  return (
-    <section className="min-h-screen flex items-center justify-center ">
-      <div className="flex flex-col lg:flex-row lg:w-full max-w-5xl">
-        <div className="flex flex-col items-start justify-center flex-1 p-4 mx-2">
-          <h1 className="mt-12 overflow-hidden text-[12vw] lg:text-[7vw] font-semibold uppercase leading-none">
-            ALWYN <br /> WILSON
-          </h1>
-          <p className='my-8 text-left text-xl'>{INTRO}</p>
-          <div className="mt-2 mb-5">
-            <a
-              href="/Alwyn_Wilson.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              download
-              className="flex items-center rounded-xl bg-orange-300 p-2 px-3 font-sans font-medium text-black hover:bg-orange-400 transition duration-300"
-            >
-              <span>Download Resume</span>
-              <LuImport className="ml-2" />
-            </a>
-          </div>
-        </div>
-        <div className="flex items-center justify-center px-5">
-          <img
-            src={alwyn}
-            alt="Alwyn Wilson"
-            className="h-screen object-cover rounded-lg shadow-lg bg-orange-300"
-          />
-        </div>
-      </div>
-    </section>
-  )
-}
+  const titleRef = useRef(null);
 
-export default Hero
+  useEffect(() => {
+    gsap.fromTo(
+      titleRef.current.children,
+      { y: 100, opacity: 0, rotateX: 90 },
+      {
+        y: 0,
+        opacity: 1,
+        rotateX: 0,
+        duration: 1,
+        stagger: 0.1,
+        ease: "back.out(1.7)",
+      }
+    );
+  }, []);
+
+  const letters = "ALWYN WILSON".split("");
+
+  return (
+    <section
+      className="relative min-h-screen w-full flex items-center justify-center bg-black font-outfit overflow-hidden px-4 sm:px-6"
+      style={{
+        backgroundImage: `url(${alwyn})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/80 z-0" />
+
+      {/* Content */}
+      <motion.div
+        className="relative z-10 flex flex-col items-center text-center text-white max-w-[90vw] sm:max-w-2xl"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        {/* Animated Name */}
+        <div
+          ref={titleRef}
+          className="text-[clamp(2rem,8vw,4rem)] font-extrabold uppercase leading-tight tracking-tight flex flex-wrap justify-center"
+        >
+          {letters.map((char, i) => (
+            <span key={i} className="inline-block">
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
+        </div>
+
+        {/* Intro */}
+        <motion.p
+          className="mt-4 text-[clamp(0.9rem,2vw,1.2rem)] text-gray-200 px-2"
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+        >
+          {INTRO}
+        </motion.p>
+
+        {/* Resume Button */}
+        <motion.a
+          href="/Alwyn_Wilson.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+          className="mt-6 sm:mt-8 inline-flex items-center gap-2 bg-orange-400 hover:bg-orange-500 text-black px-5 py-3 sm:px-6 sm:py-3 rounded-xl shadow-md transition-all duration-300 text-sm sm:text-base font-medium"
+          whileHover={{ scale: 1.05 }}
+        >
+          Download Resume <LuImport className="text-lg" />
+        </motion.a>
+      </motion.div>
+    </section>
+  );
+};
+
+export default Hero;

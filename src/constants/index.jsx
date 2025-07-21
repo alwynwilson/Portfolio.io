@@ -1,8 +1,4 @@
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-} from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 import project1 from "../assets/project1.jpg";
 import project2 from "../assets/project2.jpg";
@@ -27,73 +23,88 @@ export const MARQUEE_TEXT =
 export const PROJECTS = [
   {
     id: 1,
-    title: "Macbook Clone",
+    title: "A Notes App",
     description:
-      "A Macbook clone website with attention to detail",
-    imgSrc: project1,
-    link: "https://alwynwilson.github.io/Macbook-clone.io/",
+      "Create, edit, and manage your secure personal notes effortlessly",
+    imgSrc: project2,
+    link: "https://notes-frontend-tau.vercel.app/",
   },
   {
     id: 2,
-    title: "A Developer Blog",
-    description:
-      "A web-app to show case developer's projects using MERN stack",
-    imgSrc: project2,
-    link: "https://project-fair-io.vercel.app/",
+    title: "Vortex",
+    description: "A dummy website for design agency",
+    imgSrc: project4,
+    link: "https://vortex-io-five.vercel.app/",
   },
   {
     id: 3,
+    title: "Macbook Clone",
+    description: "A Macbook clone website with attention to detail",
+    imgSrc: project1,
+    link: "https://alwynwilson.github.io/Macbook-clone.io/",
+  },
+
+  {
+    id: 4,
     title: "DineSpot",
     description:
       "A Restuarant finding web-app limited to a small location with search functionality",
     imgSrc: project3,
     link: "https://dine-spot-io.vercel.app/",
   },
-  {
-    id: 4,
-    title: "Vortex",
-    description:
-      "A dummy website for design agency",
-    imgSrc: project4,
-    link: "https://vortex-io-five.vercel.app/",
-  },
+
   {
     id: 5,
     title: "D-Quiz",
-    description: "A Quiz app for Developer's to brush up their technical knowledge",
+    description:
+      "A Quiz app for Developer's to brush up their technical knowledge",
     imgSrc: project5,
     link: "https://quiz-app-io.vercel.app/",
   },
   {
     id: 6,
     title: "Library Management tool",
-    description:
-      "An online library inventory management app",
+    description: "An online library inventory management app",
     imgSrc: project6,
     link: "https://library-management-app-gray.vercel.app/",
   },
   {
     id: 7,
-    title: "Media Player",
-    description: "A custom media Player with watchlist for youtube contents.",
+    title: "School Management System",
+    description: "RBAC web app to maintain student details with secure Auth",
     imgSrc: project7,
-    link: "https://example.com/fitness-tracker",
+    link: "https://rbac-frontend-lw9l.vercel.app/",
   },
   {
     id: 8,
-    title: "Wanderlust",
-    description: "An Landing page for travel blog",
+    title: "Next.js fun project",
+    description: "3D cube Next.js app",
     imgSrc: project9,
-    link: "https://github.com/alwynwilson/parallax-scroll-website.io",
-  }
+    link: "https://3d-scroll-animation.vercel.app/",
+  },
 ];
 
 export const ABOUT =
   "As a passionate Full Stack Developer, I thrive on crafting dynamic and responsive web applications that deliver exceptional user experiences. With a solid foundation in both front-end and back-end technologies, I excel at building robust and scalable solutions that meet diverse needs. My expertise includes cutting-edge JavaScript frameworks like React, Node.js and Express.js, along with proficiency in database like MongoDB. I’m committed to continuous learning and staying ahead of industry trends, enabling me to integrate the latest practices and tools into every project I tackle. Let’s create something amazing together!";
 
-export const INTRO = "Full Stack Developer with expertise in building scalable web applications using modern technologies like React, Node.js, Express, and MongoDB. Driven by innovation, I craft intuitive user interfaces and robust backend solutions. Let's create something exceptional!";
+export const INTRO =
+  "Full Stack Developer with expertise in building scalable web applications using modern technologies like React, Node.js, Express, and MongoDB. Driven by innovation, I craft intuitive user interfaces and robust backend solutions. Let's create something exceptional!";
 
 export const EXPERIENCES = [
+  {
+    company: "ILearning Engiines Pvt Ltd",
+    role: "Junior Software Engineer",
+    year: "12/2024 - 03/2025",
+    description:
+      "Worked as a Junior Software Engineer in an LMS-based company using React, Node.js, Express, and PostgreSQL. Built responsive UI components, developed RESTful APIs, and designed efficient database schemas for course and user management. Implemented optimized performance, and collaborated in Agile teams to deliver features.",
+  },
+  {
+    company: "Luminar Technohub",
+    role: "Fullstack Developer Intern",
+    year: "10/2024 - 11/2024",
+    description:
+      "Built a Course Finder web app as a Fullstack Developer Intern using React, Node.js, Express.js, and MongoDB. Implemented dynamic search and filtering for courses, designed responsive UI components, and developed RESTful APIs for real-time course data. Ensured smooth user experience across devices with optimized layouts and performance tuning.",
+  },
   {
     company: "Spidero Technology",
     role: "Trainee - React Developer",
